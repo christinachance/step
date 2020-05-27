@@ -15,14 +15,13 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+function addArtPhoto(){
+    const imageIndex = Math.floor(Math.random() * 8) + 1;
+    const imgUrl = 'art-' + imageIndex + '.jpg';
+    const imgElement = document.createElement('img');
+    imgElement.src = imgUrl;
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = '';
+    imageContainer.appendChild(imgElement);
 }

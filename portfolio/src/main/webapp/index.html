@@ -7,15 +7,145 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>Christina Chance's Portfolio</h1>
-        <img src="/headshot1.jpg"/>
-      <p>Hello! I am Christina Chance, a rising Junior at Emory Univeristy majoring in Mathematics 
-          and Computer Science with a mnor in Physics. I am currently a STEP intern at Goodle, working remotely from my home in Connecticut.
-          I am interested in Data Science and specically how teh diveristy of data drives new technologies especially in the biomdeical field.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+    <div>
+      <header>
+         <h1 id = "heading">Christina Chance's Portfolio</h1>
+      </header>
+      <section>
+          <nav>
+              <ul> 
+                 <li><a href=https://docs.google.com/document/d/1VVN0-p7CV1FI3D1U_4OmTULOG_4EBdpwfJZlARjAhkc/edit?usp=sharing/>Resume</a> </li>
+                 <li><a href=https://www.linkedin.com/in/christina-chance-147666166/>LinkedIn</a> </li>
+                 <li><a href=https://github.com/christinachance>GitHub</a></li>
+              </ul>
+          </nav>
+      </div>
+      <img id="head" src="headshot1.jpg" atl= "Headshot">
+        <h2 id = "heading">Short Bio</h2> 
+          <p  id="content">Hello! I am Christina Chance, a rising Junior at Emory University majoring in Mathematics 
+          and Computer Science with a minor in Physics. I am currently a STEP intern at Google, working remotely from my home in Connecticut.
+          I am interested in Data Science and specifically how the diversity of data drives new technologies especially in the biomedical field.</p>
+      </section>
+
+      <div id="lists">
+      <section id = "skill">
+        <h2>Technical Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>HTML/CSS</li>
+            </ul>
+      </section>    
+      <section id ="class">
+          <h2>Related Courses</h2>
+            <ul>
+                <li>Database Systems</li>
+                <li>Linear Algrebra</li>
+                <li>Data Structures and Alogirthms</li>
+                <li>Differential Equations</li>
+            </ul>
+      </section>
+      </div>
+       <article id = "largeBio">
+        <h2 id = "heading"> Background</h2>
+            <p id="content" >
+                I grew up in Hartford, Connecticut with my mother and sister. Both of my parents are immigrants from Jamaica so culturally that's how I was raised. 
+            As a child, I enjoyed dancing, playing piano, martial arts and learning new things. I attened Jumoke Academy for elementay and Jumoke Academy Honors SMART for middle school. 
+            In middle school, I joined an after school and summer program called Hartford Youth Scholars' Stepping Stone Academy. I met some of my best friends through that program, 
+            and it helped me get into my highschool, the Peddie School in Hightstown, New Jersey. 
+            </p>
+             <p id="content" >
+                At Peddie, I was a prefect, a tour guide, leader of several organizations, and a thrower for the Track and Field team . During highschool, I became interested in the arts and 
+            as my final senior arts exhibit, I exhibited my friend group as if we were a family, with me being the grandmother. I created a living room and shot several photos of my friends 
+            in familial scenes. It was easily my favorite work. Since then, I have continued to paint and photograpgh in my free time. 
+             </p>
+             <p id="content" >
+                I currently attened Emory univeristy in Atlanta, Georgia. At Emory, I am the Treasurer of the Association of Caribbean Students and Educators (ACES), Sophmore Advisor for the 
+            2019-2020 year, a Residential Advisor for the 2020-2021 year, and an IMSD (Iniative for Maximizing Student Devlopment) Scholar. I am also the founder and President of BLIS 
+            (Black and Latinx in STEM). This org is like my baby and holds alot of significance to me. The rentention rate for Black and Latinx students in STEM is low, and I have 
+            witnessed several friends change their career or major paths because they weren't successful in their STEM classes or felt like they lacked support or guidance from these departments. 
+            The goal of this organization is to create a community amongst these students, connect them with faculty and professionals in their desired fields, and help ensure their 
+            success in their fields through career development workshop amd mentorship.
+             </p>
+             <p id="content" >
+                In term of my career path, I am apart of Girls for Technology, a Hartford-based group that introduces young women to Computer Science and Tech. Through this program, 
+            I myself was introduced to computer science and also to Google. Since then I attened Google's Computer Science Summer Institute in 2018 and was  Engineering Practicum 
+            intern the Summer of 2019 in New York.
+            </p>
+        </article>
+      </div> 
+       <div>
+        <article id = "artBio">
+        <h2 id= "heading"> Why I do Art </h2>
+            <p id = "content">Growing up, I was never truly creative. I took alot of art courses and after school classes  but  I wnever had the creative edge. However, I was always someone who enjoyed going through
+                the process of something and seeing the final results. I was always detail-oriented and that showed in many of my interests. As I got older, I saw all my interets overlap. With art, I viewed it as a
+                process and less like a creative form. Art still has a calming and stress-relieving affect on me,and still allowed me yto work on my focus. When I discovered this is highschool, I held  onto it as 
+                long as I could. While I can't continue art classes in college, I have found that computer science  has taken its place. I still do art when I'm bored or whenever my body tells me its time to 
+                paint something, but it is no longer a necassary part of my life.
+            </p>
+        </article>
+      </div>
+        <section>
+            <h2 id = "heading">Art Gallery</h2>
+            <div class= "gallery">
+                <a href="art-1.jpg">
+                    <img src= "art-1.jpg" alt = "Public Breakfast">
+                </a>
+            <div class= "desc">Family Breakfast, but in the main dining hall. The reversal of gender roles is to illustrate the oddity of this "traditional" family</div>
+            </div>
+
+            <div class= "gallery">
+                <a href="art-2.jpg">
+                    <img src= "art-2.jpg" alt = "Family">
+                </a>
+            <div class= "desc">Individual and group portaits of the family. All set in traditional poses with non t-traditional wardrobe.</div>
+            </div>
+
+            <div class= "gallery">
+                <a href="art-4.jpg">
+                    <img src= "art-4.jpg" alt = "Grandma's Living Room">
+                </a>
+                <div class= "desc">The living room of the grandmother with the various portraits and an album of family photos on the coffee table. The culimation of senior year art piece.</div>
+            </div>
+
+            <div class= "gallery">
+                <a href="art-3.jpg">
+                    <img src= "art-3.jpg" alt = "Emory" >
+                </a>
+                <div class= "desc">There is a tradition that each senior with the others going to their school makes their college flag.  </div>
+            </div>
+
+            <div>
+            <div class= "gallery">
+                <a href="art-5.jpg">
+                    <img src= "art-5.jpg" alt = "Faceless Me">
+                </a>
+                <div class= "desc">Self portrait and most recent work.</div>
+            </div> 
+
+            <div class= "gallery">
+                <a href="art-6.jpg">
+                    <img src= "art-6.jpg" alt = "Black Woman">
+                </a>
+                <div class= "desc">Piece inspired by a pop-up gallery I saw in New York, discusses the anomninty of black women and creates a view of us as a monolith.</div>
+            </div>
+
+            <div class= "gallery">
+                <a href="art-7.jpg">
+                    <img src= "art-7.jpg" alt = " Junior Year Photos">
+                </a>
+                <div class= "desc"> A collection of my photograpghy from Junior year.</div>
+            </div>
+        
+            <div class= "gallery">
+                <a href="art-8.jpg">
+                    <img src= "art-8.jpg" alt = "Ant Life">
+                </a>
+                <div class= "desc"> Comparing the functionality and work ethic of ants and people.</div>
+            </div>
+        </section>
+
   </body>
+
 </html>
