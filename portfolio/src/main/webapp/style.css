@@ -1,3 +1,5 @@
+
+/* General Formatting */
 #heading{
   margin-left: auto;
   margin-right: auto;
@@ -5,11 +7,25 @@
   text-align: center;
 }
 
-#content {
+#content{
+  margin-right: 80px;
+  margin-left:80px;
+}
+
+
+/* Quick Info Section */
+#head{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 80px;
+}
+
+#shortBio {
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 120px;
   width: 650px;
   text-align: justify;
+  word-wrap: normal;
 }
 
 #image-container {
@@ -20,13 +36,6 @@
   display: block;
 }
 
-#button{
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
-  text-align: center;
-}
-
 img {
   margin-left: auto;
   margin-right: auto;
@@ -35,18 +44,45 @@ img {
   display: block;
 }
 
-#head{
-  padding-top: 10px;
-  flex-direction: left;
-}
 
 header{
   background: #666;
   padding: 30px;
   font-size: 30px;
-  color: #800020;
+  color: #5A0419;
 }
 
+.headCol1{
+  float:left;
+  width:40%;
+  padding-left: 10px;
+  display: inline-flex;
+  position: sticky ;
+
+
+}
+
+.headCol2{
+  float:right;
+  width:45%;
+  padding-right: 10px;
+  display: inline-flex;
+  margin-right: 80px;
+  position: sticky;
+
+
+}
+
+
+.headRow:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* Navigation Bar */
 nav{
   flex: 1;
   background: #ccc;
@@ -60,25 +96,27 @@ nav ul{
 }
 
 a{
-  color:#800020 ;
+  color:#5A0419 ;
 }
 
+
+/* Lists  */
 #class{
   text-align: center;
   display: inline-block;
   font-size: 15px;
-  padding: 20px;
 }
 
 #class ul{
   list-style: none;
+  padding: 16px;
 }
 
 #skill{
   text-align: center;
   display: inline-block;
   padding: 20px;
-  border-right: 1px solid #800020;
+  border-right: 1px solid #5A0419;
   font-size: 15px;
 }
 
@@ -86,10 +124,15 @@ a{
   list-style: none;
 }
 
+
+/* Big Bio */
+
 #largeBio{
   background: #f1f1f1;
 }
 
+
+/* Art gallery */
 #artGallery{
   background: #f1f1f1;
 }
@@ -98,42 +141,12 @@ a{
   text-align: center;
 }
 
-/* button{
-  color: #800020 ;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid #800020 ;
-  font-size: 16px;
-  cursor: pointer;
-  float: center; 
-} */
-
-/* div.gallery {
-  margin: 10px;
-  border: 1px solid;
-  float: left;
-  width: 24%;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-div.gallery:hover {
-  border: 1px solid grey;
-} */
-
 .row{
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  margin-left: 80px;
+  margin-right:80px;
 }
 
 .column {
@@ -172,5 +185,4 @@ div.gallery:hover {
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 1;
-  
 }
