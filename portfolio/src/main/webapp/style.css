@@ -90,13 +90,14 @@ nav{
   text-align:center;
 }
 
-nav ul{
-  list-style-type: none;
-  padding: 0;
+a{
+  color:#5A0419;
+  text-decoration: none;
+  padding: 20px;
 }
 
-a{
-  color:#5A0419 ;
+a:hover{
+  color: #f1f1f1;
 }
 
 
@@ -159,9 +160,9 @@ a{
   vertical-align: middle;
 }
 
-.column img:hover{
+/* .column img:hover{
   opacity: .6;
-}
+} */
 
 .column alt:hover{
   opacity: 1;
@@ -173,7 +174,7 @@ a{
   height: 0;
   opacity: 0;
 }
-
+/* 
 .text:hover{
   color: white;
   font-size: 20px;
@@ -185,4 +186,5 @@ a{
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 1;
-}
+} */
+
