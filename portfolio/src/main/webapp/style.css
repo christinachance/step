@@ -37,6 +37,7 @@ img {
 
 #head{
   padding-top: 10px;
+  flex-direction: left;
 }
 
 header{
@@ -65,24 +66,24 @@ a{
 #class{
   text-align: center;
   display: inline-block;
+  font-size: 15px;
+  padding: 20px;
 }
 
 #class ul{
   list-style: none;
-  padding: 0;
 }
 
 #skill{
   text-align: center;
   display: inline-block;
-  padding: 5px;
-  border-right: 1px solid #800020 ;
-
+  padding: 20px;
+  border-right: 1px solid #800020;
+  font-size: 15px;
 }
 
 #skill ul{
   list-style: none;
-  padding: 0;
 }
 
 #largeBio{
@@ -108,7 +109,7 @@ a{
   float: center; 
 } */
 
-div.gallery {
+/* div.gallery {
   margin: 10px;
   border: 1px solid;
   float: left;
@@ -127,4 +128,49 @@ div.desc {
 
 div.gallery:hover {
   border: 1px solid grey;
+} */
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.column img:hover{
+  opacity: .6;
+}
+
+.column alt:hover{
+  opacity: 1;
+  text-align: center;
+  color: black;
+  }
+
+.text{
+  height: 0;
+  opacity: 0;
+}
+
+.text:hover{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 1;
+  
 }
