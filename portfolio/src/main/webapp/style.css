@@ -1,24 +1,30 @@
-
-
 /* General Formatting */
 #heading{
   margin-left: auto;
   margin-right: auto;
   width: 650px;
   text-align: center;
+  font-family: Arial;
 }
 
 #heading2{
   text-align: left;
   width: 650px;
   font-size: 16px;
+  font-family: Arial;
 }
 
 #content{
   margin-right: 80px;
   margin-left:80px;
+  font-family: Arial;
 }
 
+body{
+  font-family: Arial;
+  padding: 20px;
+
+}
 
 /* Quick Info Section */
 #head{
@@ -33,6 +39,7 @@
   width: 650px;
   text-align: justify;
   word-wrap: normal;
+  padding: 10px;
 }
 
 #image-container {
@@ -55,7 +62,8 @@ header{
   background: #666;
   padding: 30px;
   font-size: 30px;
-  color: #5A0419;
+  color: white;
+  text-align: center;
 }
 
 .headCol1{
@@ -64,8 +72,6 @@ header{
   padding-left: 10px;
   display: inline-flex;
   position: sticky ;
-
-
 }
 
 .headCol2{
@@ -83,7 +89,6 @@ header{
   clear: both;
 }
 
-
 /* Navigation Bar */
 nav{
   flex: 1;
@@ -99,11 +104,14 @@ a{
 }
 
 a:hover{
-  color: #f1f1f1;
+  color: white;
 }
 
+/* Skills and Classes  */
+#lists{
+  text-align: center;
+}
 
-/* Lists  */
 #class{
   text-align: center;
   display: inline-block;
@@ -127,21 +135,34 @@ a:hover{
   list-style: none;
 }
 
+/* Articles */
+#experience{
+  margin-right: 80px;
+  margin-left: 80px;
+  background: white;
+}
+
+.activity{
+  list-style: none;
+  padding:0;
+}
+
+#shortBio{
+  background: white;
+  padding:10px;
+}
 
 #largeBio{
   background: #f1f1f1;
+  padding: 10px;
 }
 
 #artBio{
   background: #f1f1f1;
+  padding: 10px;
 }
-
 
 /* Art gallery */
-#lists{
-  text-align: center;
-}
-
 .row{
   display: flex;
   flex-wrap: wrap;
@@ -158,31 +179,25 @@ a:hover{
 .column img {
   margin-top: 8px;
   vertical-align: middle;
+  max-width: auto;
 }
-
-/* .column img:hover{
-  opacity: .6;
-} */
 
 .column alt:hover{
   opacity: 1;
   text-align: center;
   color: black;
-  }
+}
 
 .text{
   height: 0;
   opacity: 0;
 }
 
-
-/* Experiences */
-#experience{
-  margin-right: 80px;
-  margin-left: 80px;
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #666;
+  margin-top: 20px;
+  color: white;
 }
-
-.activity{
-  list-style: none;
-}
-
