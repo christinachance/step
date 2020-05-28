@@ -16,22 +16,25 @@
  * Adds a random greeting to the page.
  */
 
-function addArtPhoto(){
-    const imageIndex = Math.floor(Math.random() * 8) + 1;
-    const imgUrl = 'art-' + imageIndex + '.jpg';
-    const imgElement = document.createElement('img');
-    imgElement.src = imgUrl;
-    const imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = '';
-    imageContainer.appendChild(imgElement);
+var slideIndex = 0;
+showSlides();
+
+
+function showSlides(){
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for(i=0; i<slides.length;i++){
+        slides[i].style.display="none";
+    }
+    console.log(slides.length);
+    slideIndex++;
+    if(slideIndex> slides.length){
+        slideIndex=1;
+    }
+    if(slideIndex<1){
+        slideIndex=slides.length;
+    }
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000);
 }
 
-var elements = document.getElementsByClassName("column");
-console.log(elements.length);
-var i;
-
-function four() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.flex = "25%";
-  }
-}
