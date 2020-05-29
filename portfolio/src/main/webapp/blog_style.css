@@ -1,75 +1,79 @@
 body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
 }
 
 /* Blog Title */
 .header {
-  background: #666;
-  padding: 30px;
-  font-size: 30px;
-  color: white;
-  text-align: center;
+    background: #666;
+    padding: 30px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
 }
 
 /* Navigation Bar */
 nav{
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
-  text-align:center;
+    flex: 1;
+    background: #ccc;
+    padding: 20px;
+    text-align:center;
 }
 
 a{
-  color:#5A0419;
-  text-decoration: none;
-  padding: 20px;
+    color:#5A0419;
+    text-decoration: none;
+    padding: 20px;
 }
 
 a:hover{
-  color: white;
+    color: white;
 }
 
 /* Column Formatting */
 .leftcolumn {
-  float: left;
-  width: 70%;
+    float: left;
+    width: 70%;
 }
 
 .rightcolumn {
-  float: right;
-  width: 20%;
-  padding-left: 20px;
+    float: right;
+    width: 20%;
+    padding-left: 20px;
 }
 
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
+.aboutImg{
+    width: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.articleImg{
-  width:80%;
-  vertical-align: middle;
+.externalLink{
+    background-color: #aaa;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
 }
 
 .card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Footer */
 .footer {
-  padding: 20px;
-  text-align: center;
-  background: #666;
-  margin-top: 20px;
-  color: white;
+    padding: 20px;
+    text-align: center;
+    background: #666;
+    margin-top: 20px;
+    color: white;
 }
