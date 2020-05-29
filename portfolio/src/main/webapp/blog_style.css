@@ -43,14 +43,18 @@ a:hover{
   padding-left: 20px;
 }
 
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
+.aboutImg{
+  width: 60%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.articleImg{
-  width:80%;
-  vertical-align: middle;
+.externalLink{
+  background-color: #aaa;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
 }
 
 .card {
