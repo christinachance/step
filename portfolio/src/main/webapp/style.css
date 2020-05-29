@@ -162,35 +162,38 @@ a:hover{
   padding: 10px;
 }
 
-/* Art gallery */
-.row{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  margin-left: 80px;
-  margin-right:80px;
+/* SlideShow */
+.mySlides{
+  display: none;
 }
 
-.column {
-  flex: 25%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 8px;
+img{
   vertical-align: middle;
-  max-width: auto;
 }
 
-.column alt:hover{
-  opacity: 1;
-  text-align: center;
-  color: black;
+/* Slideshow container */
+.slideshow-container{
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-.text{
-  height: 0;
-  opacity: 0;
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /* Footer */
