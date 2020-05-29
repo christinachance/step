@@ -28,179 +28,179 @@ body{
 
 /* Quick Info Section */
 #head{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 80px;
 }
 
 #shortBio {
-  margin-left: auto;
-  margin-right: 120px;
-  width: 650px;
-  text-align: justify;
-  word-wrap: normal;
-  padding: 10px;
+    margin-left: auto;
+    margin-right: 120px;
+    width: 650px;
+    text-align: justify;
+    word-wrap: normal;
+    padding: 10px;
 }
 
 #image-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 300px;
-  max-width: flex;
-  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
+    max-width: flex;
+    display: block;
 }
 
 img {
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 400px;
-  max-width: flex;
-  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+    max-width: flex;
+    display: block;
 }
 
 header{
-  background: #666;
-  padding: 30px;
-  font-size: 30px;
-  color: white;
-  text-align: center;
+    background: #666;
+    padding: 30px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
 }
 
 .headCol1{
-  float:left;
-  width:40%;
-  padding-left: 10px;
-  display: inline-flex;
-  position: sticky ;
+    float:left;
+    width:40%;
+    padding-left: 10px;
+    display: inline-flex;
+    position: sticky ;
 }
 
 .headCol2{
-  float:right;
-  width:45%;
-  padding-right: 10px;
-  display: inline-flex;
-  margin-right: 80px;
-  position: sticky;
+    float:right;
+    width:45%;
+    padding-right: 10px;
+    display: inline-flex;
+    margin-right: 80px;
+    position: sticky;
 }
 
 .headRow:after{
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Navigation Bar */
 nav{
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
-  text-align:center;
+    flex: 1;
+    background: #ccc;
+    padding: 20px;
+    text-align:center;
 }
 
 a{
-  color:#5A0419;
-  text-decoration: none;
-  padding: 20px;
+    color:#5A0419;
+    text-decoration: none;
+    padding: 20px;
 }
 
 a:hover{
-  color: white;
+    color: white;
 }
 
 /* Skills and Classes  */
 #lists{
-  text-align: center;
+    text-align: center;
 }
 
 #class{
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
 }
 
 #class ul{
-  list-style: none;
-  padding: 16px;
+    list-style: none;
+    padding: 16px;
 }
 
 #skill{
-  text-align: center;
-  display: inline-block;
-  padding: 20px;
-  border-right: 1px solid #5A0419;
-  font-size: 15px;
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    border-right: 1px solid #5A0419;
+    font-size: 15px;
 }
 
 #skill ul{
-  list-style: none;
+    list-style: none;
 }
 
 /* Articles */
 #experience{
-  margin-right: 80px;
-  margin-left: 80px;
-  background: white;
+    margin-right: 80px;
+    margin-left: 80px;
+    background: white;
 }
 
 .activity{
-  list-style: none;
-  padding:0;
+    list-style: none;
+    padding:0;
 }
 
 #shortBio{
-  background: white;
-  padding:10px;
+    background: white;
+    padding:10px;
 }
 
 #largeBio{
-  background: #f1f1f1;
-  padding: 10px;
+    background: #f1f1f1;
+    padding: 10px;
 }
 
 #artBio{
-  background: #f1f1f1;
-  padding: 10px;
+    background: #f1f1f1;
+    padding: 10px;
 }
 
 /* SlideShow */
 .mySlides{
-  display: none;
+    display: none;
 }
 
 img{
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 /* Slideshow container */
 .slideshow-container{
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
 }
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 /* Footer */
 .footer {
-  padding: 20px;
-  text-align: center;
-  background: #666;
-  margin-top: 20px;
-  color: white;
+    padding: 20px;
+    text-align: center;
+    background: #666;
+    margin-top: 20px;
+    color: white;
 }
