@@ -37,3 +37,9 @@ function showSlides(){
     setTimeout(showSlides, 2000);
 }
 
+function getGreeting(){
+    fetch('/data').then(response => response.text()).then((greeting) =>{
+        document.getElementById('greeting-container').innerText = greeting;
+    });
+}
+
