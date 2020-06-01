@@ -12,24 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-var slideIndex = 0;
-showSlides();
-
-
-function showSlides(){
-    var currentImgIndex;
-    var slides = document.getElementsByClassName("mySlides");
-    for(currentImgIndex=0; currentImgIndex<slides.length;currentImgIndex++){
-        slides[currentImgIndex].style.display="none";
-    }
-    slideIndex++;
-    if(slideIndex> slides.length){
-        slideIndex=1;
-    }
-    if(slideIndex<1){
-        slideIndex=slides.length;
-    }
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000);
+function getGreeting(){
+    fetch('/data').then(response => response.json()).then((greeting) =>{
+        document.getElementById('greeting-container').innerText = greeting; 
+    });
 }
