@@ -24,31 +24,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/data")
+@WebServlet("/comments")
 public class DataServlet extends HttpServlet {
 
-  private ArrayList<String> greetings = new ArrayList<String>(Arrays.asList("hello", "howdy", "wassup"));
+  private ArrayList<String> commentSection = new ArrayList<String>();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String json = convertToJsonUsingGson(greetings);
     response.setContentType("application/json;");
+    String json = new Gson().toJson(commentSection);
     response.getWriter().println(json);
   }
 
-  private String convertToJsonUsingGson(ArrayList<String> list) {
-    Gson gson = new Gson();
-    String json = gson.toJson(list);
-    return json;
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    String comment = request.getParameter("comment");
+    commentSection.add(comment);
+    response.sendRedirect("/blog.html");
   }
-
-  private String convertToJson(ArrayList<String> list) {
-    String json = "{";
-    for (int i=0; i<list.size(); i++){
-        json += "\" " + list.get(i) + "\" ";
-    }
-    json += "}";
-    return json;
+  private String getComment(HttpServletRequest request) {
+    String comment = request.getParameter("comment");
+    return comment;
   }
 }
