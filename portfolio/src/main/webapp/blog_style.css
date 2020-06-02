@@ -69,6 +69,23 @@ a:hover{
     clear: both;
 }
 
+/* Comment section */
+ul{
+    list-style: none;
+    padding-top: 16px;
+}
+
+ul li{
+    padding-top: 16px;
+}
+
+#submitButton{
+    background-color: #aaa;
+    color: white;
+    text-align: center;
+    padding: 5px 20px;
+}
+
 /* Footer */
 .footer {
     padding: 20px;

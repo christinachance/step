@@ -5,9 +5,9 @@
         <title>Blog</title>
         <link rel="stylesheet" href="blog_style.css">
         <link rel='icon' href='images/favicon.png' type='image/x-icon'/ >
-        <script src="script.js"></script>
+        <script src="blog_script.js"></script>
     </head>
-    <body>
+    <body onload ="getComments()">
         <div class="header">
             <h1>Black in STEM</h1>
             <h5 id = "heading">Celebrating, Critiquing, and Confronting</h5>
@@ -40,6 +40,21 @@
                         or the life of your family and friends everyday. You put on a smile and when asked, you say “everything is okay” or “I’m fine”. You know that “bringing your true self to work” 
                         is a privilege and luxury you don't have.  
                     </p>
+                    <div class="commentCard">
+                        <div class="comment-container">
+                            <h4> Comment Section</h4>
+                            <ul id="oldComments"></ul>
+                        </div>
+                        <div class="postComment">
+                            <form action="/comments" method="POST">
+                                <h5>Comment Here</h5>
+                                <h2 id="total"></h1>
+                                <input type="text" name="comment" id="newComment">
+                                <br/><br/>
+                                <input type="submit" value="Submit" id="submitButton">
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                 <h2>You Always Need a Friend</h2>
