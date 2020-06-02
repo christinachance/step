@@ -36,26 +36,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/comments")
 public class DataServlet extends HttpServlet {
 
-//   private ArrayList<String> commentSection = new ArrayList<String>();
-
-//   @Override
-//   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//     response.setContentType("application/json;");
-//     String json = new Gson().toJson(commentSection);
-//     response.getWriter().println(json);
-//   }
-
-//   @Override
-//   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-//     String comment = request.getParameter("comment");
-//     commentSection.add(comment);
-//     response.sendRedirect("/blog.html");
-//   }
-//   private String getComment(HttpServletRequest request) {
-//     return request.getParameter("comment");
-//   }
-
-
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
       String text = request.getParameter("comment");
