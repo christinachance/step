@@ -72,11 +72,12 @@ a:hover{
 /* Comment section */
 ul{
     list-style: none;
-    padding-top: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 ul li{
-    padding-top: 16px;
+    padding-bottom: 6px;
 }
 
 #submitButton{
@@ -84,6 +85,18 @@ ul li{
     color: white;
     text-align: center;
     padding: 5px 20px;
+    cursor: pointer;
+}
+
+input[type=text]{
+  width: 100%;
+  height: flex;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #666;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /* Footer */
