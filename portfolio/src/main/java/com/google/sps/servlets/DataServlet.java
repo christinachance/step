@@ -43,7 +43,6 @@ public class DataServlet extends HttpServlet {
     response.sendRedirect("/blog.html");
   }
   private String getComment(HttpServletRequest request) {
-    String comment = request.getParameter("comment");
-    return comment;
+    return request.getParameter("comment");
   }
 }
