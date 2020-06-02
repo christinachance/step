@@ -12,19 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 function getComments(){
     fetch('/comments').then(response => response.json()).then((comments) =>{
-        const totalComments = document.getElementById('total');
-        // totalComments.innerText = 
-        const commentHistory= document.getElementById('oldComments');
+        const commentHistory = document.getElementById('oldComments');
         comments.forEach((line) => {
-            commentHistory.appendChild(createListElement(line));
-        });
+            commentHistory.appendChild(createCommentElement(line));
+        })
     });
 }
 
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+function createCommentElement(comment){
+    const commentElement = document.createElement('li');
+    commentElement.className = 'comment';
+
+    const textElement = document.createElement('p');
+    textElement.innerText = comment.text;
+
+    const dateElement = document.createElement('h5');
+    dateElement.innerText = comment.date;
+
+    commentElement.appendChild(dateElement);
+    commentElement.appendChild(textElement);
+    return commentElement;
 }
