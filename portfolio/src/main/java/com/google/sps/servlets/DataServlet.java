@@ -43,11 +43,13 @@ public class DataServlet extends HttpServlet {
       SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy HH:mm");    
       Date resultdate = new Date(timestamp);
       String date = sdf.format(resultdate);
+      long postId = Long.parseLong(request.getParameter("id"));
 
       Entity commentEntity = new Entity("Comment");
       commentEntity.setProperty("text", text);
       commentEntity.setProperty("timestamp", timestamp);
       commentEntity.setProperty("date", date);
+      commentEntity.setProperty("postId", postId);
 
       DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
       datastore.put(commentEntity);
@@ -68,8 +70,9 @@ public class DataServlet extends HttpServlet {
           String text = (String) entity.getProperty("text");
           String date = (String) entity.getProperty("date");
           long timestamp = (long) entity.getProperty("timestamp");
+          long postId = (long) entity.getProperty("postId");
 
-          Comment comment = new Comment(id, text, timestamp, date);
+          Comment comment = new Comment(id, text, timestamp, date, postId);
           comments.add(comment);
       }
 
