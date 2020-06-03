@@ -27,7 +27,7 @@ a{
     padding: 20px;
 }
 
-a:hover{
+nav a:hover{
     color: white;
 }
 
@@ -51,10 +51,12 @@ a:hover{
 }
 
 .externalLink{
-    background-color: #aaa;
     width: 100%;
     text-align: center;
-    padding: 5px;
+}
+
+a:hover{
+    color: #aaa;
 }
 
 .card {
@@ -80,12 +82,23 @@ ul li{
     padding-bottom: 6px;
 }
 
+ul li button{
+    background-color: white;
+    color: #5A0419;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+}
+
 #submitButton{
     background-color: #aaa;
     color: white;
     text-align: center;
     padding: 5px 20px;
     cursor: pointer;
+    text-decoration: none;
+    border: none;
 }
 
 input[type=text]{

@@ -32,7 +32,21 @@ function createCommentElement(comment){
     const dateElement = document.createElement('h5');
     dateElement.innerText = comment.date;
 
+    const deleteButtonElement = document.createElement('button');
+    deleteButtonElement.innerText = 'Delete';
+    deleteButtonElement.addEventListener('click', () => {
+        deleteComment(comment);
+        commentElement.remove();
+    });
+
     commentElement.appendChild(dateElement);
     commentElement.appendChild(textElement);
+    commentElement.appendChild(deleteButtonElement);
     return commentElement;
+}
+
+function deleteComment(comment){
+    const params = new URLSearchParams();
+    params.append('id', comment.id);
+    fetch('/delete-comment', {method: 'POST', body:params});
 }
