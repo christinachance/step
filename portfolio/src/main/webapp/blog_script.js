@@ -15,18 +15,12 @@
 
 function getComments(){
     fetch('/comments').then(response => response.json()).then((comments) =>{
-        const numCommentSections = document.getElementsByClassName('oldComments').length;
-        for(var postId=1; postId<=numCommentSections; postId++){
-            const commentHistory = document.getElementById(postId);
-            comments.forEach((comment) => {
-                if(postId == comment.postId){
-                    commentHistory.appendChild(createCommentElement(comment));
-                }
-            })
-        }
+        comments.forEach((comment) => {
+            const commentHistory = document.getElementById(comment.postId);
+            commentHistory.appendChild(createCommentElement(comment));
+        })
     });
 }
-
 
 function createCommentElement(comment){
     const commentElement = document.createElement('li');
