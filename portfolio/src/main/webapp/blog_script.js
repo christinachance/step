@@ -27,15 +27,6 @@ function getComments(){
     });
 }
 
-// function getComments(){
-//     fetch('/comments').then(response => response.json()).then((comments) =>{
-//         comments.forEach((comment) => {
-//             const commentHistory = document.getElementById(comment.postId);
-//             commentHistory.appendChild(createCommentElement(comment));
-//         })
-//     });
-// }
-
 
 function createCommentElement(comment){
     const commentElement = document.createElement('li');
