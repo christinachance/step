@@ -31,6 +31,12 @@ nav a:hover{
     color: white;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 /* Column Formatting */
 .leftcolumn {
     float: left;

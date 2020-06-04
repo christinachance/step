@@ -5,19 +5,20 @@
         <title>Blog</title>
         <link rel="stylesheet" href="blog_style.css">
         <link rel='icon' href='images/favicon.png' type='image/x-icon'/ >
-        <script src="blog_script.js"></script>
     </head>
     <body onload ="getComments()">
         <div class="header">
             <h1>Black in STEM</h1>
             <h5 id = "heading">Celebrating, Critiquing, and Confronting</h5>
         </div>
+        <div id="nav">
         <nav>
-            <a href=index.html target="_self">Home</a>
-            <a href=blog.html target="_self">Blog</a>
-            <a href=https://docs.google.com/document/d/1VVN0-p7CV1FI3D1U_4OmTULOG_4EBdpwfJZlARjAhkc/edit?usp=sharing target="_blank">Resume</a>
-            <a href=https://github.com/christinachance target="_blank">GitHub</a>
+            <a href="javascript:void(0)"><a href=index.html target="_self">Home</a></a>
+            <a href="javascript:void(0)"><a href=blog.html target="_self">Blog</a></a>
+            <a href="javascript:void(0)"><a href=https://docs.google.com/document/d/1VVN0-p7CV1FI3D1U_4OmTULOG_4EBdpwfJZlARjAhkc/edit?usp=sharing target="_blank">Resume</a></a>
+            <a href="javascript:void(0)"><a href=https://github.com/christinachance target="_blank">GitHub</a></a>
         </nav>
+        </div>
         <div class="row">
             <div class="leftcolumn">
                 <div class="card">
@@ -34,12 +35,25 @@
                         happened to us, we were expected to forgive and move on. I didn’t feel like I was “bringing my true self” to my classes then.
                     </p>
                     <p>
-                        With everything that has been happening since quarantine started with Ahmaud Arbery, George Floyd, Regis Korchinski, Tony McDade, Breonna Taylor, and the protests in Minneapolis, all I can think 
-                        about is how Black people are supposed to act like everything is okay and like the world isn’t falling apart around us. But that’s a part of being Black. 
+                        With everything that has been happening since quarantine started with the murders of Ahmaud Arbery, George Floyd, Regis Korchinski, Tony McDade, Breonna Taylor, and the protests 
+                        in Minneapolis, all I can think about is how Black people are supposed to act like everything is okay and like the world isn’t falling apart around us. But that’s a part of being Black. 
                         You deal with and internalize everything, and then you push all those feelings deep down inside of you, and go to class and work, and act as if you don’t fear for your life, 
                         or the life of your family and friends everyday. You put on a smile and when asked, you say “everything is okay” or “I’m fine”. You know that “bringing your true self to work” 
                         is a privilege and luxury you don't have.  
                     </p>
+                    <div class="card">
+                    <div class="comment-container">
+                        <h3> Comment Section</h3>
+                        <ul class="oldComments" id=1></ul>
+                    </div>
+                    <div class="postComment">
+                        <form action="/comments" method="POST">
+                            <input type="text" name="comment" placeholder ="Have any thoughts ..."><input name="id" value=1 type ="hidden">
+                            <br/><br/>
+                            <input type="submit" value="Submit" id="submitButton">
+                        </form>
+                    </div>
+                    </div>
                 </div>
                 <div class="card">
                 <h2>You Always Need a Friend</h2>
@@ -66,20 +80,20 @@
                     <p>
                         While that semester was still atrocious, I ended up resurrecting all of my grades and befriending several people along the way. Hopefully, they will still recognize and talk to me after quarantine. 
                     </p>
-                </div>
-                <div class="card">
-                        <div class="comment-container">
-                            <h3> Comment Section</h3>
-                            <ul id="oldComments"></ul>
-                        </div>
-                        <div class="postComment">
-                            <form action="/comments" method="POST">
-                                <input type="text" name="comment" id="newComment" placeholder ="Have any thoughts ...">
-                                <br/><br/>
-                                <input type="submit" value="<b>Submit<b>" id="submitButton">
-                            </form>
-                        </div>
+                    <div class="card">
+                    <div class="comment-container">
+                        <h3> Comment Section</h3>
+                        <ul class="oldComments" id=2></ul>
                     </div>
+                    <div class="postComment">
+                        <form action="/comments" method="POST">
+                            <input type="text" name="comment" placeholder ="Have any thoughts ..."><input name="id" value=2 type="hidden">
+                            <br/><br/>
+                            <input type="submit" value="Submit" id="submitButton">
+                        </form>
+                     </div>
+                </div>
+                </div>
             </div>
             <div class="rightcolumn">
                 <div class="card">
@@ -104,8 +118,10 @@
         </div>
         <div class="footer">
             <h2>Contact Me</h2>
-            <h4><a href="mailto: christinachnace315@gmail.com" target="_blank">Email:</a>christinachance315@gmail.com</h4>
+            <h4><a href="mailto: christinachance315@gmail.com" target="_blank">Email:</a>christinachance315@gmail.com</h4>
             <h4><a href=https://www.linkedin.com/in/christina-chance-147666166 target="_blank">LinkedIn</a></h4>         
         </div>
   </body>
+    <script src="blog_script.js"></script>
+
 </html>

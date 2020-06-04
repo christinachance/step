@@ -15,9 +15,9 @@
 
 function getComments(){
     fetch('/comments').then(response => response.json()).then((comments) =>{
-        const commentHistory = document.getElementById('oldComments');
-        comments.forEach((line) => {
-            commentHistory.appendChild(createCommentElement(line));
+        comments.forEach((comment) => {
+            const commentHistory = document.getElementById(comment.postId);
+            commentHistory.appendChild(createCommentElement(comment));
         })
     });
 }
@@ -49,4 +49,17 @@ function deleteComment(comment){
     const params = new URLSearchParams();
     params.append('id', comment.id);
     fetch('/delete-comment', {method: 'POST', body:params});
+}
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("nav");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
 }
