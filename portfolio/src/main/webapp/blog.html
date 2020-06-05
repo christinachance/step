@@ -48,7 +48,7 @@
                     </div>
                     <div class="postComment">
                         <form action="/comments" method="POST">
-                            <input type="text" name="comment" placeholder ="Have any thoughts ..."><input name="id" value=1 type ="hidden">
+                            <textarea type="text" name="comment" placeholder ="Have any thoughts ..." maxlength="1000"></textarea><input name="id" value=1 type ="hidden">
                             <br/><br/>
                             <input type="submit" value="Submit" id="submitButton">
                         </form>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="postComment">
                         <form action="/comments" method="POST">
-                            <input type="text" name="comment" placeholder ="Have any thoughts ..."><input name="id" value=2 type="hidden">
+                            <textarea type="text" name="comment" placeholder ="Have any thoughts ..." maxlength="1000"></textarea><input name="id" value=2 type="hidden">
                             <br/><br/>
                             <input type="submit" value="Submit" id="submitButton">
                         </form>
