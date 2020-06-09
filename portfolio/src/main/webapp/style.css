@@ -82,6 +82,13 @@ header{
     clear: both;
 }
 
+@media screen and (max-width: 600px) {
+  .headCol1, .headCol2{
+    width: 100%;
+    display: block;
+  }
+}
+
 /* Navigation Bar */
 nav{
     flex: 1;
