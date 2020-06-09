@@ -45,7 +45,7 @@ function createCommentElement(comment, currUserEmail){
     commentElement.appendChild(dateElement);
     commentElement.appendChild(textElement);
 
-    if(currUserEmail == comment.userEmail || isAdmin == "true"){
+    if (currUserEmail == comment.userEmail || isAdmin == "true") {
         const deleteButtonElement = document.createElement('button');
         deleteButtonElement.innerText = 'Delete';
         deleteButtonElement.addEventListener('click', () => {
@@ -66,13 +66,13 @@ function deleteComment(comment){
 
 function  getPostFunctionality(){
     fetch('/login').then(response => response.json()).then((userInfo) =>{
-        if(userInfo[0] == "true"){
+        if (userInfo[0] == "true") {
             console.log('User is signed in and should see post option');
             var forms = document.getElementsByTagName("form");
             for(let i=0;i<forms.length; i++){
                forms[i].style.display="block";
             }
-        }else{
+        } else {
          console.log('user not login and should not see post option');
         }
     })
@@ -84,7 +84,7 @@ function getUserLogin() {
         link.href = userInfo[3];
         if (userInfo[0] == "true") {
             link.innerText="Sign Out";
-        }else{
+        } else {
             link.innerText="Sign In";
         }
     });

@@ -14,8 +14,6 @@
 
 
 var slideIndex = 0;
-// showSlides();
-
 
 function showSlides(){
     var currentImgIndex;
@@ -24,10 +22,10 @@ function showSlides(){
         slides[currentImgIndex].style.display="none";
     }
     slideIndex++;
-    if(slideIndex> slides.length){
+    if (slideIndex> slides.length) {
         slideIndex=1;
     }
-    if(slideIndex<1){
+    if (slideIndex<1) {
         slideIndex=slides.length;
     }
     slides[slideIndex-1].style.display = "block";
@@ -53,7 +51,7 @@ function getUserLogin() {
         link.href = userInfo[3];
         if (userInfo[0] == "true") {
             link.innerText="Sign Out";
-        }else{
+        } else {
             link.innerText="Sign In";
         }
     });

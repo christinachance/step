@@ -43,9 +43,9 @@ public class LogInServlet extends HttpServlet {
       String logoutUrl = userService.createLogoutURL(urlToRedirectToAfterUserLogsOut);
       userInfo.add("true"); //is user logged in
       userInfo.add(userEmail); //user's email
-      if(userService.isUserAdmin()){
+      if (userService.isUserAdmin()) {
           userInfo.add("true"); //is user admin
-      }else{
+      } else {
           userInfo.add("fale");
       }
       userInfo.add(logoutUrl); //link for user to use

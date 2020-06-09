@@ -49,9 +49,9 @@ public class DataServlet extends HttpServlet {
       String userEmail = null;
 
       UserService userService = UserServiceFactory.getUserService();
-      if (userService.isUserLoggedIn()){
+      if (userService.isUserLoggedIn()) {
         userEmail = userService.getCurrentUser().getEmail();
-      }else{
+      } else {
         String urlToRedirectToAfterUserLogsIn = "/";
         String loginUrl = userService.createLoginURL(urlToRedirectToAfterUserLogsIn);
         response.sendRedirect(loginUrl);
