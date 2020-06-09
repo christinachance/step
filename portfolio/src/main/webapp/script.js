@@ -14,7 +14,7 @@
 
 
 var slideIndex = 0;
-showSlides();
+// showSlides();
 
 
 function showSlides(){
@@ -31,7 +31,7 @@ function showSlides(){
         slideIndex=slides.length;
     }
     slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000);
+    setTimeout(showSlides, 3000);
 }
 
 window.onscroll = function() {myFunction()};
@@ -45,4 +45,16 @@ function myFunction() {
   } else {
     navbar.classList.remove("sticky");
   }
+}
+
+function getUserLogin() {
+    fetch('/login').then(response => response.json()).then((userInfo) => {
+        const link = document.getElementById('loginButton');
+        link.href = userInfo[3];
+        if (userInfo[0] == "true") {
+            link.innerText="Sign Out";
+        }else{
+            link.innerText="Sign In";
+        }
+    });
 }

@@ -29,9 +29,9 @@ public class DeleteDataServlet extends HttpServlet{
   
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-      long id = Long.parseLong(request.getParameter("id"));
+      long commentId = Long.parseLong(request.getParameter("commentId"));
 
-      Key commentEntityKey = KeyFactory.createKey("Comment", id);
+      Key commentEntityKey = KeyFactory.createKey("Comment", commentId);
       DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
       datastore.delete(commentEntityKey);
   }

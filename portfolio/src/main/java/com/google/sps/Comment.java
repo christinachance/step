@@ -17,17 +17,19 @@ package com.google.sps.data;
 // A singular comment in the comment ssection
 public final class Comment {
 
-  private final long id;
+  private final long commentId;
   private final String text;
   private final long timestamp;
   private final String date;
   private final long postId;
+  private final String userEmail;
 
-  public Comment(long id, String text, long timestamp, String date, long postId) {
-    this.id = id;
+  public Comment(long commentId, String text, long timestamp, String date, long postId, String userEmail) {
+    this.commentId = commentId;
     this.text = text;
     this.timestamp = timestamp;
     this.date = date;
     this.postId = postId;
+    this.userEmail = userEmail;
   }
 }

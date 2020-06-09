@@ -46,12 +46,23 @@ public class DataServlet extends HttpServlet {
       Date resultdate = new Date(timestamp);
       String date = sdf.format(resultdate);
       long postId = Long.parseLong(request.getParameter("id"));
+      String userEmail = null;
+
+      UserService userService = UserServiceFactory.getUserService();
+      if (userService.isUserLoggedIn()){
+        userEmail = userService.getCurrentUser().getEmail();
+      }else{
+        String urlToRedirectToAfterUserLogsIn = "/";
+        String loginUrl = userService.createLoginURL(urlToRedirectToAfterUserLogsIn);
+        response.sendRedirect(loginUrl);
+      }
 
       Entity commentEntity = new Entity("Comment");
       commentEntity.setProperty("text", text);
       commentEntity.setProperty("timestamp", timestamp);
       commentEntity.setProperty("date", date);
       commentEntity.setProperty("postId", postId);
+      commentEntity.setProperty("userEmail", userEmail);
 
       DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
       datastore.put(commentEntity);
@@ -68,13 +79,14 @@ public class DataServlet extends HttpServlet {
 
       List<Comment> comments = new ArrayList<>();
       for(Entity entity:results.asIterable()){
-          long id = entity.getKey().getId();
+          long commentId = entity.getKey().getId();
           String text = (String) entity.getProperty("text");
           String date = (String) entity.getProperty("date");
           long timestamp = (long) entity.getProperty("timestamp");
           long postId = (long) entity.getProperty("postId");
+          String userEmail = (String) entity.getProperty("userEmail"); 
 
-          Comment comment = new Comment(id, text, timestamp, date, postId);
+          Comment comment = new Comment(commentId, text, timestamp, date, postId, userEmail);
           comments.add(comment);
       }
 

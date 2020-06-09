@@ -13,35 +13,48 @@
 // limitations under the License.
 
 
+
 function getComments(){
+    var currUserEmail = null; 
+    fetch('/login').then(response => response.json()).then((userInfo) =>{
+        currUserEmail = userInfo[1];
+        isAdmin = userInfo[2];
+    });
     fetch('/comments').then(response => response.json()).then((comments) =>{
         comments.forEach((comment) => {
             const commentHistory = document.getElementById(comment.postId);
-            commentHistory.appendChild(createCommentElement(comment));
+            commentHistory.appendChild(createCommentElement(comment, currUserEmail));
         })
     });
 }
 
-function createCommentElement(comment){
+function createCommentElement(comment, currUserEmail){
     const commentElement = document.createElement('li');
     commentElement.className = 'comment';
 
     const textElement = document.createElement('p');
     textElement.innerText = comment.text;
 
-    const dateElement = document.createElement('h5');
+    const dateElement = document.createElement('h6');
     dateElement.innerText = comment.date;
 
-    const deleteButtonElement = document.createElement('button');
-    deleteButtonElement.innerText = 'Delete';
-    deleteButtonElement.addEventListener('click', () => {
-        deleteComment(comment);
-        commentElement.remove();
-    });
+    const userEmailElement = document.createElement('h5');
+    userEmailElement.innerText = comment.userEmail;
 
+    commentElement.appendChild(userEmailElement);
     commentElement.appendChild(dateElement);
     commentElement.appendChild(textElement);
-    commentElement.appendChild(deleteButtonElement);
+
+    if(currUserEmail == comment.userEmail || isAdmin == "true"){
+        const deleteButtonElement = document.createElement('button');
+        deleteButtonElement.innerText = 'Delete';
+        deleteButtonElement.addEventListener('click', () => {
+            deleteComment(comment);
+            commentElement.remove();
+        });
+        commentElement.appendChild(deleteButtonElement);
+
+    }
     return commentElement;
 }
 
@@ -51,6 +64,33 @@ function deleteComment(comment){
     fetch('/delete-comment', {method: 'POST', body:params});
 }
 
+function  getPostFunctionality(){
+    fetch('/login').then(response => response.json()).then((userInfo) =>{
+        if(userInfo[0] == "true"){
+            console.log('User is signed in and should see post option');
+            var forms = document.getElementsByTagName("form");
+            for(let i=0;i<forms.length; i++){
+               forms[i].style.display="block";
+            }
+        }else{
+         console.log('user not login and should not see post option');
+        }
+    })
+}
+
+function getUserLogin() {
+    fetch('/login').then(response => response.json()).then((userInfo) => {
+        const link = document.getElementById('loginButton');
+        link.href = userInfo[3];
+        if (userInfo[0] == "true") {
+            link.innerText="Sign Out";
+        }else{
+            link.innerText="Sign In";
+        }
+    });
+}
+
+// Sticky NavBar Functions
 window.onscroll = function() {myFunction()};
 
 var navbar = document.getElementById("nav");
