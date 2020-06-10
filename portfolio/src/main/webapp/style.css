@@ -213,3 +213,37 @@ a:hover{
     margin-top: 20px;
     color: white;
 }
+
+/* Map */
+#mapContainer{
+    height:650px;
+}
+
+#map {
+    height: 600px;
+    background-color:#ccc;
+    border: 1px solid #666;
+
+}
+
+#floating-panel {
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #ccc;
+    padding: 5px;
+    border: 1px solid #666;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.mapButt{
+    background-color: #ccc;
+    color: #5A0419;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+}
