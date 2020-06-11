@@ -66,10 +66,13 @@ function createCommentElement(comment, currUserEmail, isAdmin){
     return commentElement;
 }
 
-function deleteComment(comment){
-    const params = new URLSearchParams();
-    params.append('id', comment.id);
-    fetch('/delete-comment', {method: 'POST', body:params});
+async function deleteComment(comment){
+    (async () =>{
+        const params = new URLSearchParams();
+        console.log(comment.commentId);
+        params.append('commentId', comment.commentId);
+        fetch('/delete-comment', {method: 'POST', body:params});
+    })();
 }
 
 function  getPostFunctionality(){
@@ -77,8 +80,8 @@ function  getPostFunctionality(){
         if (userInfo[0] == "true") {
             console.log('User is signed in and should see post option');
             var forms = document.getElementsByTagName("form");
-            for(let i=0;i<forms.length; i++){
-               forms[i].style.display="block";
+            for(let formIndex=0; formIndex<forms.length; formIndex++){
+               forms[formIndex].style.display="block";
             }
         } else {
          console.log('user not login and should not see post option');
@@ -105,8 +108,8 @@ function fetchBlobstoreUrlAndShowForm() {
       })
       .then((imageUploadUrl) => {
         const messageForm = document.getElementsByClassName('my-form');
-        for(let i=0; i<messageForm.length;i++){
-            messageForm[i].action=imageUploadUrl;
+        for(let formIndex=0; formIndex<messageForm.length; formIndex++){
+            messageForm[formIndex].action=imageUploadUrl;
         }
       });
 }

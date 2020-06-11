@@ -1,0 +1,134 @@
+/* General Formatting */
+#heading{
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  text-align: center;
+  font-family: Arial;
+}
+
+#heading2{
+  text-align: left;
+  width: 650px;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+#content{
+  margin-right: 80px;
+  margin-left:80px;
+  font-family: Arial;
+}
+
+body{
+  font-family: Arial;
+  padding: 20px;
+}
+
+header{
+    background: #666;
+    padding: 30px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav{
+    flex: 1;
+    background: #ccc;
+    padding: 20px;
+    text-align:center;
+}
+
+a{
+    color:#5A0419;
+    text-decoration: none;
+    padding: 20px;
+}
+
+a:hover{
+    color: white;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+/* SlideShow */
+.mySlides{
+    display: none;
+}
+
+.mySlides img{
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+    height: auto;
+    display: block;
+}
+
+.slideshow-container{
+    margin: auto;
+    vertical-align: center;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Map */
+#mapContainer{
+    height:650px;
+}
+
+#map {
+    height: 600px;
+    background-color:#ccc;
+    border: 1px solid #666;
+}
+
+#floating-panel {
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #ccc;
+    padding: 5px;
+    border: 1px solid #666;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.mapButt{
+    background-color: #ccc;
+    color: #5A0419;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #666;
+    margin-top: 20px;
+    color: white;
+}
