@@ -16,6 +16,7 @@
 
 function getComments(){
     var currUserEmail = null; 
+    var isAdmin = "false";
     fetch('/login').then(response => response.json()).then((userInfo) =>{
         currUserEmail = userInfo[1];
         isAdmin = userInfo[2];
@@ -23,12 +24,12 @@ function getComments(){
     fetch('/comments').then(response => response.json()).then((comments) =>{
         comments.forEach((comment) => {
             const commentHistory = document.getElementById(comment.postId);
-            commentHistory.appendChild(createCommentElement(comment, currUserEmail));
+            commentHistory.appendChild(createCommentElement(comment, currUserEmail, isAdmin));
         })
     });
 }
 
-function createCommentElement(comment, currUserEmail){
+function createCommentElement(comment, currUserEmail, isAdmin){
     const commentElement = document.createElement('li');
     commentElement.className = 'comment';
 
@@ -43,6 +44,13 @@ function createCommentElement(comment, currUserEmail){
 
     commentElement.appendChild(userEmailElement);
     commentElement.appendChild(dateElement);
+
+    if(comment.imageUrl!=null){
+        const imageElement = document.createElement('img');
+        imageElement.src = comment.imageUrl;
+        commentElement.appendChild(imageElement)
+    }
+
     commentElement.appendChild(textElement);
 
     if (currUserEmail == comment.userEmail || isAdmin == "true") {
@@ -88,6 +96,19 @@ function getUserLogin() {
             link.innerText="Sign In";
         }
     });
+}
+
+function fetchBlobstoreUrlAndShowForm() {
+  fetch('/blobstore-upload-url')
+      .then((response) => {
+        return response.text();
+      })
+      .then((imageUploadUrl) => {
+        const messageForm = document.getElementsByClassName('my-form');
+        for(let i=0; i<messageForm.length;i++){
+            messageForm[i].action=imageUploadUrl;
+        }
+      });
 }
 
 // Sticky NavBar Functions
