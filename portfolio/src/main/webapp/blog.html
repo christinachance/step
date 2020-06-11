@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="blog_style.css">
         <link rel='icon' href='images/favicon.png' type='image/x-icon'/ >
     </head>
-    <body onload ="getComments(); getPostFunctionality(); getUserLogin()">
+    <body onload ="getComments(); getPostFunctionality(); getUserLogin(); fetchBlobstoreUrlAndShowForm()">
         <div class="header">
             <h1>Black in STEM</h1>
             <h5 id = "heading">Celebrating, Critiquing, and Confronting</h5>
@@ -44,17 +44,18 @@
                         is a privilege and luxury you don't have.  
                     </p>
                     <div class="card">
-                    <div class="comment-container">
-                        <h3> Comment Section</h3>
-                        <ul class="oldComments" id=1></ul>
-                    </div>
-                    <div class="postComment">
-                        <form action="/comments" method="POST" style ="display:none;">
-                            <textarea type="text" name="comment" placeholder ="Have any thoughts ..." maxlength="1000"></textarea><input name="id" value=1 type ="hidden">
-                            <br/><br/>
-                            <input type="submit" value="Submit" id="submitButton">
-                        </form>
-                    </div>
+                        <div class="comment-container">
+                            <h3> Comment Section</h3>
+                            <ul class="oldComments" id=1></ul>
+                        </div>
+                        <div class="postComment">
+                            <form action="/comments" method="POST" style ="display:none;" form class="my-form" form id=1 method="POST" enctype="multipart/form-data">
+                                <textarea type="text" name="comment" placeholder ="Have any thoughts ..." maxlength="1000"></textarea><input name="id" value=1 type ="hidden">
+                                <input type="file" name="image">
+                                <br/><br/>
+                                <input type="submit" value="Submit" id="submitButton">
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -83,18 +84,19 @@
                         While that semester was still atrocious, I ended up resurrecting all of my grades and befriending several people along the way. Hopefully, they will still recognize and talk to me after quarantine. 
                     </p>
                     <div class="card">
-                    <div class="comment-container">
-                        <h3> Comment Section</h3>
-                        <ul class="oldComments" id=2></ul>
-                    </div>
-                    <div class="postComment">
-                        <form action="/comments" method="POST" style ="display:none;">
-                            <textarea type="text" name="comment" placeholder ="Have any thoughts ..." maxlength="1000"></textarea><input name="id" value=2 type="hidden">
-                            <br/><br/>
-                            <input type="submit" value="Submit" id="submitButton">
-                        </form>
-                     </div>
-                </div>
+                        <div class="comment-container">
+                            <h3> Comment Section</h3>
+                            <ul class="oldComments" id=2></ul>
+                        </div>
+                        <div class="postComment">
+                            <form action="/comments" method="POST" style ="display:none;" form class="my-form" form id=2 method="POST" enctype="multipart/form-data">
+                                <textarea type="text" name="comment" placeholder ="Have any thoughts ..." maxlength="1000"></textarea><input name="id" value=2 type="hidden">
+                                <input type="file" name="image">
+                                <br/><br/>
+                                <input type="submit" value="Submit" id="submitButton">
+                            </form>
+                        </div>
+                   </div>
                 </div>
             </div>
             <div class="rightcolumn">
@@ -123,7 +125,6 @@
             <h4><a href="mailto: christinachance315@gmail.com" target="_blank">Email:</a>christinachance315@gmail.com</h4>
             <h4><a href=https://www.linkedin.com/in/christina-chance-147666166 target="_blank">LinkedIn</a></h4>         
         </div>
-  </body>
+    </body>
     <script src="blog_script.js"></script>
-
 </html>
