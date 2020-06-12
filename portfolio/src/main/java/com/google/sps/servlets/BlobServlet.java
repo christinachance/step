@@ -15,6 +15,7 @@
 
 package com.google.sps.servlets;
 
+import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import java.io.IOException;
@@ -39,5 +40,5 @@ public class BlobServlet extends HttpServlet {
     response.setContentType("text/html");
     response.getWriter().println(uploadUrl);
   }
-}
 
+}
