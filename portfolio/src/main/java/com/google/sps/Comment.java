@@ -23,15 +23,15 @@ public final class Comment {
   private final String date;
   private final long postId;
   private final String userEmail;
-  private final String imageUrl;
+  private final String imageKey;
 
-  public Comment(long commentId, String text, long timestamp, String date, long postId, String userEmail, String imageUrl) {
+  public Comment(long commentId, String text, long timestamp, String date, long postId, String userEmail, String imageKey) {
     this.commentId = commentId;
     this.text = text;
     this.timestamp = timestamp;
     this.date = date;
     this.postId = postId;
     this.userEmail = userEmail;
-    this.imageUrl = imageUrl;
+    this.imageKey = imageKey;
   }
 }
