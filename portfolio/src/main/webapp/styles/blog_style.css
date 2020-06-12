@@ -108,12 +108,16 @@ ul li button{
 }
 
 textarea{
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-  font-family: Arial; 
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: Arial; 
+}
+
+img{
+    max-height: 400px;
 }
 
 /* Footer */

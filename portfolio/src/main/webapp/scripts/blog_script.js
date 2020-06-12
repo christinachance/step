@@ -45,10 +45,13 @@ function createCommentElement(comment, currUserEmail, isAdmin){
     commentElement.appendChild(userEmailElement);
     commentElement.appendChild(dateElement);
 
-    if(comment.imageUrl!=null){
+    if(comment.imageKey!=null){
         const imageElement = document.createElement('img');
-        imageElement.src = comment.imageUrl;
-        commentElement.appendChild(imageElement)
+        fetch('/serveBlob?imageKey='+comment.imageKey).then((image)=>{
+            imageElement.src = image.url;
+        });
+        commentElement.appendChild(imageElement);
+
     }
 
     commentElement.appendChild(textElement);
@@ -108,6 +111,7 @@ function fetchBlobstoreUrlAndShowForm() {
       .then((imageUploadUrl) => {
         const messageForm = document.getElementsByClassName('my-form');
         for(let formIndex=0; formIndex<messageForm.length; formIndex++){
+            console.log(imageUploadUrl);
             messageForm[formIndex].action=imageUploadUrl;
         }
       });
