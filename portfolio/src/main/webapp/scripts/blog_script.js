@@ -69,7 +69,6 @@ function createCommentElement(comment, currUserEmail, isAdmin){
 async function deleteComment(comment){
     (async () =>{
         const params = new URLSearchParams();
-        console.log(comment.commentId);
         params.append('commentId', comment.commentId);
         fetch('/delete-comment', {method: 'POST', body:params});
     })();
