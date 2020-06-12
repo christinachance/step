@@ -37,7 +37,6 @@ header{
 #headshot{
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: 80px;
 }
 
 #shortBio {
@@ -92,14 +91,15 @@ header{
 nav{
     flex: 1;
     background: #ccc;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align:center;
 }
 
 a{
     color:#5A0419;
     text-decoration: none;
-    padding: 20px;
+    padding: 10px;
 }
 
 a:hover{
