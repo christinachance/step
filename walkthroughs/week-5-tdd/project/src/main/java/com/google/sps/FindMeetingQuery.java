@@ -48,13 +48,14 @@ public final class FindMeetingQuery {
 
         Collections.sort(busyMandatory, TimeRange.ORDER_BY_START);
 
-        //iterate over the list of busy and if an event is containd in another, remove it.
+        // iterate over the list of busy and if an event is containd in another, remove it.
         Iterator<TimeRange> iter = busyMandatory.iterator();
         while(iter.hasNext()){
             TimeRange current = iter.next();
             for(int checkIndex=0; checkIndex <busyMandatory.size(); checkIndex++){
                 if(current.start() > busyMandatory.get(checkIndex).start() && current.end() < busyMandatory.get(checkIndex).end()){
                     iter.remove();
+                    break;
                 }
             }
         }
@@ -77,6 +78,7 @@ public final class FindMeetingQuery {
             for(int checkIndex=0; checkIndex <busyOptional.size(); checkIndex++){
                 if(current.start() > busyOptional.get(checkIndex).start() && current.end() < busyOptional.get(checkIndex).end()){
                     iterOptional.remove();
+                    break;
                 }
             }
         }
