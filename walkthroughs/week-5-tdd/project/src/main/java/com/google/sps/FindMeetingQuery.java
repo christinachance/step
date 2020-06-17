@@ -61,25 +61,25 @@ public final class FindMeetingQuery {
 
         //Optional Attendees
         for(Event event : events){
-                for(String attendee : request.getOptionalAttendees()){
-                    if(event.getAttendees().contains(attendee) && !busyMandatory.contains(event.getWhen())){
-                        busyOptional.add(event.getWhen());
-                        break;
-                    }
+            for(String attendee : request.getOptionalAttendees()){
+                if(event.getAttendees().contains(attendee) && !busyMandatory.contains(event.getWhen())){
+                    busyOptional.add(event.getWhen());
+                    break;
                 }
             }
+        }
 
-            Collections.sort(busyOptional, TimeRange.ORDER_BY_START);
+        Collections.sort(busyOptional, TimeRange.ORDER_BY_START);
 
-            Iterator<TimeRange> iterOptional = busyOptional.iterator();
-            while(iter.hasNext()){
-                TimeRange current = iterOptional.next();
-                for(int checkIndex=0; checkIndex <busyOptional.size(); checkIndex++){
-                    if(current.start() > busyOptional.get(checkIndex).start() && current.end() < busyOptional.get(checkIndex).end()){
-                        iterOptional.remove();
-                    }
+        Iterator<TimeRange> iterOptional = busyOptional.iterator();
+        while(iter.hasNext()){
+            TimeRange current = iterOptional.next();
+            for(int checkIndex=0; checkIndex <busyOptional.size(); checkIndex++){
+                if(current.start() > busyOptional.get(checkIndex).start() && current.end() < busyOptional.get(checkIndex).end()){
+                    iterOptional.remove();
                 }
             }
+        }
 
         //checks availabilty of optional attendees
         if(request.getAttendees().isEmpty() && !request.getOptionalAttendees().isEmpty()){
@@ -120,7 +120,6 @@ public final class FindMeetingQuery {
                 } else {
                     return available;
                 }
-
             }
         }
     }
@@ -154,16 +153,12 @@ public final class FindMeetingQuery {
         //adds possible time range for the avaiable times when none of the groups meetings overlap and ensures that the duration in available  times is more or equivalent to requested duration
         for( int timeIndex = 1; timeIndex < busyTimes.size(); timeIndex++){
             if(!busyTimes.get(timeIndex).overlaps(busyTimes.get(timeIndex-1)) && request.getDuration()<=(busyTimes.get(timeIndex).start()) - busyTimes.get(timeIndex-1).end()){
-                if(busyTimes.get(timeIndex).end() < busyTimes.get(timeIndex-1).end()){
-                    availableTimes.add(TimeRange.fromStartEnd(busyTimes.get(timeIndex).end(), busyTimes.get(timeIndex-1).end(), false));
-                } else {
-                    availableTimes.add(TimeRange.fromStartEnd(busyTimes.get(timeIndex-1).end(), busyTimes.get(timeIndex).start(), false));
-                }
+                availableTimes.add(TimeRange.fromStartEnd(busyTimes.get(timeIndex-1).end(), busyTimes.get(timeIndex).start(), false));
             }
         }
 
         //adds all the time after the last meeting of the group of attendees
-        if(busyTimes.get(busyTimes.size()-1).end()!= TimeRange.END_OF_DAY &&  (TimeRange.END_OF_DAY - busyTimes.get(busyTimes.size()-1).end()-1) > 0 ){
+        if((TimeRange.END_OF_DAY - busyTimes.get(busyTimes.size()-1).end()-1) > 0 ){
             availableTimes.add(TimeRange.fromStartEnd(busyTimes.get(busyTimes.size()-1).end(), TimeRange.END_OF_DAY, true));
         }
 
